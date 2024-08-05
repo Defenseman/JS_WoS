@@ -10,11 +10,52 @@
 </body>
 </html>
 <script>
-    let string = "Hello"
-    let boolean = true
-    let number1 = 350;
-    let number2 = 496;
-    let sum = number1 + number2;
+    let greeting = "Попрбуй пройти тест";
 
-    alert (sum);
+    let word0 = "How are you?";
+    let word0translation = "Как твои дела?";
+
+    let word1 = "Folder";
+    let word1translation = "Папка";
+
+    let word2 = "Table";
+    let word2translation = "Стол";
+
+    let wordCount = 3;
+
+    let finalSuccessPhrase = "Молодец, хорошая работа!";
+    let finalUnsuccessPhrase = "Не сдавайся попробуй ещё!";
+
+    let correctAnswerCount = 0;
+
+    let requiredPercent = 50;
+
+    //----------------------------------------------
+    alert(greeting);
+
+    let userAnswer0 = prompt(word0);
+    alert(userAnswer0 === word0translation);
+    if (userAnswer0 === word0translation) {
+        correctAnswerCount = correctAnswerCount + 1;
+    }
+
+    let userAnswer1 = prompt(word1);
+    alert(userAnswer1 === word1translation);
+    if (userAnswer1 === word1translation) {
+        correctAnswerCount = correctAnswerCount + 1;
+    }
+
+    let userAnswer2 = prompt(word2);
+    alert(userAnswer2 === word2translation);
+    if (userAnswer2 === word2translation) {
+        correctAnswerCount = correctAnswerCount + 1;
+    }
+
+    if (correctAnswerCount / wordCount * 100 > requiredPercent ) {
+        alert(finalSuccessPhrase)
+    }
+    else {
+        alert(finalUnsuccessPhrase)
+    }
+
 </script>
