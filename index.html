@@ -10,52 +10,58 @@
 </body>
 </html>
 <script>
-    let greeting = "Попрбуй пройти тест";
+    let greeting = "Hello friend, попробуй пройти тест";
 
-    let word0 = "How are you?";
-    let word0translation = "Как твои дела?";
+    let word0 = "String";
+    let word0Translation = "Строка";
 
-    let word1 = "Folder";
-    let word1translation = "Папка";
+    let word1 = "Developer";
+    let word1Translation = "Разработчик";
 
-    let word2 = "Table";
-    let word2translation = "Стол";
+    let word2 = "Frame";
+    let word2Translation = "Рамка";
 
     let wordCount = 3;
 
-    let finalSuccessPhrase = "Молодец, хорошая работа!";
-    let finalUnsuccessPhrase = "Не сдавайся попробуй ещё!";
-
-    let correctAnswerCount = 0;
+    let correctAnswer = 0;
 
     let requiredPercent = 50;
 
-    //----------------------------------------------
+    let successPhrase = "Good job!"
+    let failPhrase = "You failed"
+
+    let repeatPhrase = "Reload the page to try again?"
+
+    //------------------------------
+
     alert(greeting);
 
     let userAnswer0 = prompt(word0);
-    alert(userAnswer0 === word0translation);
-    if (userAnswer0 === word0translation) {
-        correctAnswerCount = correctAnswerCount + 1;
+    alert(userAnswer0 === word0Translation);
+    if (userAnswer0 === word0Translation) {
+        correctAnswer = correctAnswer + 1
     }
 
     let userAnswer1 = prompt(word1);
-    alert(userAnswer1 === word1translation);
-    if (userAnswer1 === word1translation) {
-        correctAnswerCount = correctAnswerCount + 1;
+    alert(userAnswer1 === word1Translation);
+    if (userAnswer1 === word1Translation) {
+        correctAnswer = correctAnswer + 1
     }
 
     let userAnswer2 = prompt(word2);
-    alert(userAnswer2 === word2translation);
-    if (userAnswer2 === word2translation) {
-        correctAnswerCount = correctAnswerCount + 1;
+    alert(userAnswer2 === word2Translation);
+    if (userAnswer2 === word2Translation) {
+        correctAnswer = correctAnswer + 1;
     }
 
-    if (correctAnswerCount / wordCount * 100 > requiredPercent ) {
-        alert(finalSuccessPhrase)
+    let userCorrectAnswers = correctAnswer / wordCount * 100
+
+    if (userCorrectAnswers > requiredPercent) {
+        alert(successPhrase)
     }
     else {
-        alert(finalUnsuccessPhrase)
+        alert(failPhrase)
+        alert(repeatPhrase)
     }
 
 </script>
