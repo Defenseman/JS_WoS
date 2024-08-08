@@ -43,7 +43,7 @@
     document.write("START", "<br>");
 
     let balance = 100;
-    document.write("Your balance: " + balance, "<br>")
+
 
     const productPriceString = window.prompt("How much does the item cost?");
     const productPrice = window.Number(productPriceString);
@@ -64,6 +64,41 @@
             document.write(successResult, "<br>")
         }
     }
+
+    balance -= productPrice
+
+    const productPriceString1 = window.prompt("How much does the 2-nd item cost?");
+    const productPrice1 = window.Number(productPriceString1);
+
+
+    if (isNaN(productPrice1)) {
+        document.write(incorrectInput, "<br>")
+    } else {
+        if (balance < productPrice1) {
+            document.write(failedResult, "<br>")
+        } else {
+            document.write(successResult, "<br>")
+        }
+    }
+
+    balance -= productPrice1
+
+    const productPriceString2 = window.prompt("How much does the 3-d item cost?");
+    const productPrice2 = window.Number(productPriceString2);
+
+    if (isNaN(productPrice2)) {
+        document.write(incorrectInput, "<br>")
+    } else {
+        if (balance < productPrice2) {
+            document.write(failedResult, "<br>")
+        } else {
+            document.write(successResult, "<br>")
+        }
+    }
+
+    balance -= productPrice2
+
+    document.write("Your balance: " + balance, "<br>")
     document.write("END")
 
 </script>
