@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <title>JS_WoS</title>
 </head>
 <body>
@@ -19,7 +23,7 @@
     document.write('User response: ' + userAnswer + '<br>');
     console.log('User response: ' + userAnswer);*/
 
-    const greeting1 = "Hello, please type yor name";
+    /*const greeting1 = "Hello, please type yor name";
 
     const userResponse = prompt(greeting1);
     document.write("Ваше имя: " + userResponse + "<br>");
@@ -30,7 +34,36 @@
     document.write("Ваша фамилия: " + userResponse2 + "<br>");
 
     const finalPhrase = "Регистрация завершена, спасибо!";
-    alert(finalPhrase);
+    alert(finalPhrase);*/
 
+    let successResult = "Item Purchased";
+    let failedResult = "Not enough money";
+    let incorrectInput = "Incorrect input, please enter a number"
+
+    document.write("START", "<br>");
+
+    let balance = 100;
+    document.write("Your balance: " + balance, "<br>")
+
+    const productPriceString = window.prompt("How much does the item cost?");
+    const productPrice = window.Number(productPriceString);
+    //----------------------
+
+    /*if (balance >= productPrice) {
+        document.write(successResult, "<br>")
+    } else {
+        document.write(failedResult, "<br>")
+    }*/
+
+    if (isNaN(productPrice)) {
+        document.write(incorrectInput, "<br>")
+    } else {
+        if (balance < productPrice) {
+            document.write(failedResult, "<br>")
+        } else {
+            document.write(successResult, "<br>")
+        }
+    }
+    document.write("END")
 
 </script>
