@@ -10,98 +10,153 @@
     <title>JS_WoS</title>
 </head>
 <body>
-    <div>
-        <script src="for_loop.js"></script>
-    </div>
+<div>
+    <script src="for_loop.js"></script>
+</div>
 </body>
 </html>
 <script>
 
-/*    const ilya = 'My name is Ilya, how is your name?'
-    const userAnswer = window.prompt(ilya, 'My name is ...');
-    document.write('User response: ' + userAnswer + '<br>');
-    document.write('User response: ' + userAnswer + '<br>');
-    document.write('User response: ' + userAnswer + '<br>');
-    document.write('User response: ' + userAnswer + '<br>');
-    console.log('User response: ' + userAnswer);
+    let words = [
+        {
+            original: "Guess",
+            translation: "Угадай"
+        },
+        {
+            original: "How",
+            translation: "Как"
+        },
+        {
+            original: "Therefore",
+            translation: "Поэтому"
+        }
+    ];
 
-    const greeting1 = "Hello, please type yor name";
+    const notificationMassages = {
+        result: {
+            finishSuccess: "Good job!",
+            finishFailed: "You need more practise"
+        },
+        start: {
+            greeting: "Hello, try to pass the test"
+        }
+    }
+    const settings = {
+        requiredMin: 50
+    }
+    const result = {
+        correctAnswerCount: 0
+    }
 
-    const userResponse = prompt(greeting1);
-    document.write("Ваше имя: " + userResponse + "<br>");
+    //-------------------------------------------------
 
-    const greeting2 = "Now, write your surname";
+    alert(notificationMassages.start.greeting);
 
-    const userResponse2 = prompt(greeting2);
-    document.write("Ваша фамилия: " + userResponse2 + "<br>");
-
-    const finalPhrase = "Регистрация завершена, спасибо!";
-    alert(finalPhrase);
-
-    let successResult = "Item Purchased";
-    let failedResult = "Not enough money";
-    let incorrectInput = "Incorrect input, please enter a number"
-
-    document.write("START", "<br>");
-
-    let balance = 100;
-
-
-    const productPriceString = window.prompt("How much does the item cost?");
-    const productPrice = window.Number(productPriceString);
-    //----------------------
-
-    /!*if (balance >= productPrice) {
-        document.write(successResult, "<br>")
-    } else {
-        document.write(failedResult, "<br>")
-    }*!/
-
-    if (isNaN(productPrice)) {
-        document.write(incorrectInput, "<br>")
-    } else {
-        if (balance < productPrice) {
-            document.write(failedResult, "<br>")
-        } else {
-            document.write(successResult, "<br>")
+    for (let i = 0; i < words.length; i++ ){
+        let userAnswer = prompt(words[i].original);
+        alert(userAnswer === words[i].translation);
+        if (userAnswer === words[i].translation) {
+            result.correctAnswerCount = result.correctAnswerCount + 1
         }
     }
 
-    balance -= productPrice
-
-    const productPriceString1 = window.prompt("How much does the 2-nd item cost?");
-    const productPrice1 = window.Number(productPriceString1);
-
-
-    if (isNaN(productPrice1)) {
-        document.write(incorrectInput, "<br>")
-    } else {
-        if (balance < productPrice1) {
-            document.write(failedResult, "<br>")
-        } else {
-            document.write(successResult, "<br>")
-        }
+    let userResult = result.correctAnswerCount / words.length * 100
+    if (userResult >= settings.requiredMin ) {
+        alert(notificationMassages.result.finishSuccess)
+    }else {
+        alert(notificationMassages.result.finishFailed)
     }
 
-    balance -= productPrice1
 
-    const productPriceString2 = window.prompt("How much does the 3-d item cost?");
-    const productPrice2 = window.Number(productPriceString2);
 
-    if (isNaN(productPrice2)) {
-        document.write(incorrectInput, "<br>")
-    } else {
-        if (balance < productPrice2) {
-            document.write(failedResult, "<br>")
-        } else {
+
+
+
+    /*    const ilya = 'My name is Ilya, how is your name?'
+        const userAnswer = window.prompt(ilya, 'My name is ...');
+        document.write('User response: ' + userAnswer + '<br>');
+        document.write('User response: ' + userAnswer + '<br>');
+        document.write('User response: ' + userAnswer + '<br>');
+        document.write('User response: ' + userAnswer + '<br>');
+        console.log('User response: ' + userAnswer);
+
+        const greeting1 = "Hello, please type yor name";
+
+        const userResponse = prompt(greeting1);
+        document.write("Ваше имя: " + userResponse + "<br>");
+
+        const greeting2 = "Now, write your surname";
+
+        const userResponse2 = prompt(greeting2);
+        document.write("Ваша фамилия: " + userResponse2 + "<br>");
+
+        const finalPhrase = "Регистрация завершена, спасибо!";
+        alert(finalPhrase);
+
+        let successResult = "Item Purchased";
+        let failedResult = "Not enough money";
+        let incorrectInput = "Incorrect input, please enter a number"
+
+        document.write("START", "<br>");
+
+        let balance = 100;
+
+
+        const productPriceString = window.prompt("How much does the item cost?");
+        const productPrice = window.Number(productPriceString);
+        //----------------------
+
+        /!*if (balance >= productPrice) {
             document.write(successResult, "<br>")
+        } else {
+            document.write(failedResult, "<br>")
+        }*!/
+
+        if (isNaN(productPrice)) {
+            document.write(incorrectInput, "<br>")
+        } else {
+            if (balance < productPrice) {
+                document.write(failedResult, "<br>")
+            } else {
+                document.write(successResult, "<br>")
+            }
         }
-    }
 
-    balance -= productPrice2
+        balance -= productPrice
 
-    document.write("Your balance: " + balance, "<br>")
-    document.write("END")*/
+        const productPriceString1 = window.prompt("How much does the 2-nd item cost?");
+        const productPrice1 = window.Number(productPriceString1);
+
+
+        if (isNaN(productPrice1)) {
+            document.write(incorrectInput, "<br>")
+        } else {
+            if (balance < productPrice1) {
+                document.write(failedResult, "<br>")
+            } else {
+                document.write(successResult, "<br>")
+            }
+        }
+
+        balance -= productPrice1
+
+        const productPriceString2 = window.prompt("How much does the 3-d item cost?");
+        const productPrice2 = window.Number(productPriceString2);
+
+        if (isNaN(productPrice2)) {
+            document.write(incorrectInput, "<br>")
+        } else {
+            if (balance < productPrice2) {
+                document.write(failedResult, "<br>")
+            } else {
+                document.write(successResult, "<br>")
+            }
+        }
+
+        balance -= productPrice2
+
+        document.write("Your balance: " + balance, "<br>")
+        document.write("END")*/
 
 
 </script>
