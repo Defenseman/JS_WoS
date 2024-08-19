@@ -38,6 +38,7 @@ let shoppingList = [
     ["молоко", "хлеб", "яйца"],
     ["сок", "мороженое"],
     ["корм для кота", "шампунь"],
+    ["Вафельница", "IPhone", "Apple Watch"]
 ]
 
 for (let i = 0; i < shoppingList.length; i++) {
